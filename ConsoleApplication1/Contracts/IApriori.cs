@@ -1,9 +1,11 @@
-﻿namespace AprioriAlgorithm
-{
-    using System.Collections.Generic;
+﻿using ConsoleApplication1.Entities;
 
-    public interface IApriori
-    {
-        Output ProcessTransaction(double minSupport, double minConfidence, IEnumerable<string> items, string[] transactions);
-    }
+namespace ConsoleApplication1.Contracts
+{
+	using System.Collections.Generic;
+
+	public interface IApriori
+	{
+		Output ProcessTransaction(double minSupport, double minConfidence, IEnumerable<string> items, string[] transactions, string[] itemsD = null);
+	}
 }

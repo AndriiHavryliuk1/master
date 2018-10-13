@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-namespace AprioriAlgorithm
+namespace ConsoleApplication1.Contracts
 {
-    interface ISorter
-    {
-        string Sort(string token);
-    }
+	internal interface ISorter
+	{
+		string Sort(string token);
+	}
 }

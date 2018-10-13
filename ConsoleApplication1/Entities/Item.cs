@@ -1,22 +1,15 @@
 ﻿using System;
-namespace AprioriAlgorithm
+namespace ConsoleApplication1.Entities
 {
-    public class Item : IComparable<Item>
-    {
-        #region Public Properties
+	public class Item : IComparable<Item>
+	{
+		public string Name { get; set; }
+		public double Support { get; set; }
 
-        public string Name { get; set; }
-        public double Support { get; set; } 
 
-        #endregion
-
-        #region IComparable
-
-        public int CompareTo(Item other)
-        {
-            return Name.CompareTo(other.Name);
-        } 
-
-        #endregion
-    }
+		public int CompareTo(Item other)
+		{
+			return Name.CompareTo(other.Name);
+		}
+	}
 }
