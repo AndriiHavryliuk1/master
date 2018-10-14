@@ -4,35 +4,23 @@ using ConsoleApplication1.Implementation;
 
 namespace ConsoleApplication1.Entities
 {
-	public class Rule : IComparable<Rule>
+	public class Rule
 	{
-		readonly string combination, remaining;
+		readonly string[] combination, remaining;
 		readonly double confidence;
 
-		public Rule(string combination, string remaining, double confidence)
+		public Rule(string[] combination, string[] remaining, double confidence)
 		{
 			this.combination = combination;
 			this.remaining = remaining;
 			this.confidence = confidence;
 		}
 
-		public string X { get { return combination; } }
+		public string[] X { get { return combination; } }
 
-		public string Y { get { return remaining; } }
+		public string[] Y { get { return remaining; } }
 
 		public double Confidence { get { return confidence; } }
-
-		public int CompareTo(Rule other)
-		{
-			return X.CompareTo(other.X);
-		}
-
-		public override int GetHashCode()
-		{
-			ISorter sorter = new Sorter();
-			string sortedXY = sorter.Sort(X + Y);
-			return sortedXY.GetHashCode();
-		}
 
 		public override bool Equals(object obj)
 		{

@@ -6,6 +6,6 @@ namespace ConsoleApplication1.Contracts
 
 	public interface IApriori
 	{
-		Output ProcessTransaction(double minSupport, double minConfidence, IEnumerable<string> items, string[] transactions, string[] itemsD = null);
+		Output ProcessTransaction(double minSupport, double minConfidence, IEnumerable<string> items, string[][] transactions, string[] itemsD = null);
 	}
 }

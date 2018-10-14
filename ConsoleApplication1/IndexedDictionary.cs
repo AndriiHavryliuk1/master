@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Linq;
 using ConsoleApplication1.Entities;
 
 namespace ConsoleApplication1
@@ -8,11 +9,12 @@ namespace ConsoleApplication1
 	{
 		protected override string GetKeyForItem(Item item)
 		{
-			return item.Name;
+			return string.Join("", item.Names);
 		}
 
 		internal void ConcatItems(IList<Item> frequentItems)
 		{
+			
 			foreach (var item in frequentItems)
 			{
 				this.Add(item);

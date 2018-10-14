@@ -1,15 +1,10 @@
 ﻿using System;
 namespace ConsoleApplication1.Entities
 {
-	public class Item : IComparable<Item>
+	public class Item
 	{
-		public string Name { get; set; }
+		public string[] Names { get; set; }
 		public double Support { get; set; }
 
-
-		public int CompareTo(Item other)
-		{
-			return Name.CompareTo(other.Name);
-		}
 	}
 }

@@ -3,6 +3,6 @@ namespace ConsoleApplication1.Contracts
 {
 	internal interface ISorter
 	{
-		string Sort(string token);
+		string[] Sort(string[] token);
 	}
 }
