@@ -315,8 +315,8 @@ namespace ConsoleApplication1.Implementation
 		{
 			var XYstring= string.Join("", XY.OrderBy(x => x));
 			var Xstring = string.Join("", X.OrderBy(x => x));
-			var supportX = allFrequentItems.FirstOrDefault(x => string.Join("", x.Names) == Xstring).Support;
-			var supportXY = allFrequentItems.FirstOrDefault(x => string.Join("", x.Names) == XYstring).Support;
+			var supportX = allFrequentItems.FirstOrDefault(x => string.Join("", x.Names.OrderBy(k => k)) == Xstring).Support;
+			var supportXY = allFrequentItems.FirstOrDefault(x => string.Join("", x.Names.OrderBy(k => k)) == XYstring).Support;
 			return supportXY / supportX;
 		}
 	}

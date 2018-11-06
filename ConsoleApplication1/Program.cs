@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
+using System.Text;
 using ConsoleApplication1.Contracts;
 using ConsoleApplication1.Implementation;
 
@@ -13,12 +13,7 @@ namespace ConsoleApplication1
 		{
 			string[] items = ReadFromFile("items.txt");
 			string[] itemsD = null; // ReadFromFile("itemsD.txt");
-			var transactions = new string[5][];
-			transactions[0] = new[] { "a", "b", "c" };
-			transactions[1] = new[] { "a", "b", "e" };
-			transactions[2] = new[] { "a", "b" };
-			transactions[3] = new[] { "a", "c" };
-			transactions[4] = new[] { "b", "d" };
+			var transactions = FileReader.FileReader.ReadFromFile("transactions.txt");
 
 			IApriori apriori = new Apriori();
 			Stopwatch stopWatch = new Stopwatch();
@@ -64,12 +59,10 @@ namespace ConsoleApplication1
 
 		private static string[] ReadFromFile(string path)
 		{
-			var text = File.ReadAllText(path);
-			// char[] delimiterChars = { ' ', ',', '.', '\t', '\n', '\\', '\"' };
-			text = text.Replace(" ", "");
+			var text = File.ReadAllText(path, Encoding.Default);
+			text = text.Replace("\r", "");
 			text = text.Replace("\"", "");
-			text = text.Replace("\n", "");
-			var words = text.Split(',');
+			var words = text.Split('\n');
 			return words;
 		}
 	}
